@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ComicDoor</string>
+    <string name="app_d">Pluginable comic reader solution</string>
+    <string name="navi_hot">Hot</string>
+    <string name="navi_download">Download</string>
+    <string name="navi_plugin">Plugins</string>
+    <string name="navi_setting">Setting</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navi_search">Search</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">漫画门</string>
+    <string name="app_d">插件式漫画聚合解决方案</string>
+    <string name="navi_download">下载</string>
+    <string name="navi_hot">热门</string>
+    <string name="navi_plugin">插件</string>
+    <string name="navi_setting">设置</string>
+    <string name="navi_search">搜索</string>
+    <string name="hello_blank_fragment">这是一个空白的碎片</string>
+</resources>
