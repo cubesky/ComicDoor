@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "comicdoor.comicdoor"
@@ -18,13 +18,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn 'ndkBuild', 'copyJniLibs'
+    }
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+}
+task ndkBuild(type: Exec) {
+    def ndkDir = "D:/Development/SDK/android-ndk-r11c"
+    //注：在mac下使用ndk-build ，在win下使用ndk-build.cmd
+    //notice: in mac use /ndk-build , in win use /ndk-build.cmd
+    commandLine "$ndkDir/ndk-build.cmd", '-C', 'src/main/jni',
+            "NDK_OUT=$buildDir/ndk/obj",
+            "NDK_APP_DST_DIR=$buildDir/ndk/libs/\$(TARGET_ARCH_ABI)"
 }
 
+task copyJniLibs(type: Copy) {
+    from fileTree(dir: file(buildDir.absolutePath + '/ndk/libs'), include: '**/*.so')
+    into file('src/main/jniLibs')
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'br.com.liveo:navigationdrawer-material:2.5.1' //Apache License
-    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:support-v4:24.2.0'
+    compile "commons-io:commons-io:2.4"
     compile project(':loadingdrawable-library')  //Apache License
 }
