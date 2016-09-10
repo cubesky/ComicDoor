@@ -4,10 +4,10 @@
 
 # Notice
 ##Library Dependency
-LoadingDrawable https://github.com/dinuscxj/LoadingDrawable (Apache License 2.0)
-LiveoNavigationDrawer https://github.com/rudsonlive/NavigationDrawer-MaterialDesign (Apache License 2.0)
-LuaJava https://github.com/jasonsantos/luajava (License)
-AndroLua https://github.com/mkottman/AndroLua (License)
+* LoadingDrawable https://github.com/dinuscxj/LoadingDrawable (Apache License 2.0)
+* LiveoNavigationDrawer https://github.com/rudsonlive/NavigationDrawer-MaterialDesign (Apache License 2.0)
+* LuaJava https://github.com/jasonsantos/luajava (License)
+* AndroLua https://github.com/mkottman/AndroLua (License)
 
 
 # License
