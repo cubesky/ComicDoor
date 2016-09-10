@@ -22,6 +22,7 @@ public class LuaUtils {
 
     }
 
+
     public void loadLua(File file) throws IOException {
         InputStream in = new FileInputStream(file);
         L.LdoString(IOUtils.toString(in, "UTF-8"));

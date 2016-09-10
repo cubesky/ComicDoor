@@ -13,6 +13,7 @@ import comicdoor.comicdoor.bean.PluginBean;
 public class LuaPluginManager {
     private static LuaPluginManager instance = null;
     private HashMap<String,PluginBean> plugin_instance = new HashMap<>();
+    private static ArrayList<File> plugin_library = new ArrayList<>();
     private LuaPluginManager(){
 
     }
@@ -29,11 +30,17 @@ public class LuaPluginManager {
         return null;
         //StaticConst plugin_home
     }
+    private static void searchLibrary(){
+        //search library
+    }
     public void loadPlugin(){
         ArrayList<File> plugin_lua=searchPlugin();
         for(File lua_file:plugin_lua){
             LuaUtils lua=new LuaUtils();
             try {
+                for(File lib:plugin_library){
+                    lua.loadLua(lib);
+                }
                 lua.loadLua(lua_file);
                 String name=lua.evalFunction("getName");
                 String version=lua.evalFunction("getVersion");
