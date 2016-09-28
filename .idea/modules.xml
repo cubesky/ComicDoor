@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ComicDoor.iml" filepath="$PROJECT_DIR$/ComicDoor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circlerefresh-library/circlerefresh-library.iml" filepath="$PROJECT_DIR$/circlerefresh-library/circlerefresh-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/loadingdrawable-library/loadingdrawable-library.iml" filepath="$PROJECT_DIR$/loadingdrawable-library/loadingdrawable-library.iml" />
     </modules>
   </component>

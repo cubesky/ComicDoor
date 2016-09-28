@@ -1,11 +1,16 @@
 package comicdoor.comicdoor.utils;
 
+import android.os.Environment;
+
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import comicdoor.comicdoor.bean.PluginBean;
+import comicdoor.comicdoor.values.StaticConst;
 
 /**
  * Created by max_3 on 2016/9/10.
@@ -27,20 +32,23 @@ public class LuaPluginManager {
 
     }
     private ArrayList<File> searchPlugin(){
-        return null;
+        File folder_plugin=new File(StaticConst.plugin_home);
+        File plugins[]=folder_plugin.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                if(name.endsWith(".comicdoor.lua")) return true;
+                return false;
+            }
+        });
+        ArrayList<File> plugin_file= (ArrayList<File>) Arrays.asList(plugins);
+        return plugin_file;
         //StaticConst plugin_home
-    }
-    private static void searchLibrary(){
-        //search library
     }
     public void loadPlugin(){
         ArrayList<File> plugin_lua=searchPlugin();
         for(File lua_file:plugin_lua){
             LuaUtils lua=new LuaUtils();
             try {
-                for(File lib:plugin_library){
-                    lua.loadLua(lib);
-                }
                 lua.loadLua(lua_file);
                 String name=lua.evalFunction("getName");
                 String version=lua.evalFunction("getVersion");

@@ -1,1 +1,1 @@
-include ':app', ':loadingdrawable-library'
+include ':app', ':loadingdrawable-library', ':circlerefresh-library'

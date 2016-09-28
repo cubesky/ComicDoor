@@ -10,6 +10,7 @@ Plugin-Style design, fast to match every comic site!
 * LiveoNavigationDrawer https://github.com/rudsonlive/NavigationDrawer-MaterialDesign (Apache License 2.0)
 * LuaJava https://github.com/jasonsantos/luajava (License)
 * AndroLua https://github.com/mkottman/AndroLua (License)
+* CircleRefreshLayout https://github.com/tuesda/CircleRefreshLayout (MIT)
 
 
 # License

@@ -4,6 +4,23 @@
     android:layout_height="match_parent"
     tools:context="comicdoor.comicdoor.fragment.ComicListFragment">
 
+    <com.tuesda.walker.circlerefresh.CircleRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:AniBackColor="#ff8b90af"
+        app:AniForeColor="#ffffffff"
+        app:CircleSmaller="6"
+        android:id="@+id/pull_to_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_comic_list"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"/>
+
+    </com.tuesda.walker.circlerefresh.CircleRefreshLayout>
 
 </FrameLayout>

@@ -4,10 +4,8 @@ import org.apache.commons.io.IOUtils;
 import org.keplerproject.luajava.LuaState;
 import org.keplerproject.luajava.LuaStateFactory;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -19,7 +17,6 @@ public class LuaUtils {
     public LuaUtils(){
         L= LuaStateFactory.newLuaState();
         L.openLibs();
-
     }
 
 
